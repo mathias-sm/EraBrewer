@@ -11,4 +11,4 @@ docs/index.html: README.Rmd dev/test_plots.R R/PaletteCode.R
 all: README.md README.Rmd docs/index.html
 
 clean:
-	rm -Rf README.md README.html docs
+	rm -Rf README.md README.html docs vignettes/EraBrewer.html man/*.Rd

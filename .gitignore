@@ -5,4 +5,5 @@
 *.Rproj
 README.html
 dev/res/
-docs/         # pkgdown output — committed only if serving via gh-pages
+docs/
+pkgdown/
