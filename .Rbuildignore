@@ -8,3 +8,5 @@
 ^_pkgdown.yml$
 ^man/figures/.*\.ai$
 ^man/figures/(?!logo).*\.svg$
+^cran-comments\.md$
+^CRAN-SUBMISSION$
