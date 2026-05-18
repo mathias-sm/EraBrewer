@@ -79,13 +79,13 @@ mapping <- c(
 #'
 #' @examples
 #' # Discrete palette using the curated order-of-use
-#' era.brewer("Lover2", n = 3)
+#' print(era.brewer("Lover2", n = 3))
 #'
 #' # Continuous interpolation when n exceeds the stored palette length
-#' era.brewer("Showgirl2", n = 50, type = "continuous")
+#' print(era.brewer("Showgirl2", n = 50, type = "continuous"))
 #'
 #' # Reverse direction
-#' era.brewer("Fearless", direction = -1)
+#' print(era.brewer("Fearless", direction = -1))
 #'
 #' # Plug into a ggplot2 manual scale
 #' library(ggplot2)
