@@ -1,0 +1,10 @@
+^dev$
+^makefile$
+^README\.html$
+^README\.Rmd$
+^docs$
+^Python$
+^pkgdown$
+^_pkgdown.yml$
+^man/figures/.*\.ai$
+^man/figures/(?!logo).*\.svg$

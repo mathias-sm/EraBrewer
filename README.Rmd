@@ -1,0 +1,99 @@
+# EraBrewer <img align="right" src="man/figures/logo_white_bg.svg" width=400>
+
+Palettes inspired by Taylor Swift's album covers.
+
+Structure of the package was based on
+[`MetBrewer`](https://github.com/BlakeRMills/MetBrewer/)
+themselves inspired by:
+
+* [`RColorBrewer`](https://CRAN.R-project.org/package=RColorBrewer/RColorBrewer.pdf) from [Cynthia Brewer](https://colorbrewer2.org)
+* [`PNWColors`](https://github.com/jakelawlor/PNWColors)
+* [`wesanderson`](https://github.com/karthik/wesanderson)
+
+[Installation](#install-package)
+
+[Palettes](#palettes)
+
+The colours are just colours. The copyright for the album covers is most likely
+owned by either the publisher of the work or the artist(s) which produced the
+recording or cover artwork in question. It is believed that the use of
+low-resolution images of such covers qualifies as fair use.
+
+## Install Package
+
+### `R`
+
+Install the released version from CRAN:
+
+```r
+install.packages("EraBrewer")
+```
+
+Or the development version from GitHub:
+
+```r
+# install.packages("pak")
+pak::pak("mathias-sm/EraBrewer")
+```
+
+Usage:
+
+```r
+ggplot(data=iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
+  geom_point() +
+  scale_color_manual(values=era.brewer(palette_name, n=3))
+```
+
+### `Python`
+
+Place `Python/era_brewer.py` into your source directory.
+
+Use it in your code:
+
+```python
+from matplotlib.colors import LinearSegmentedColormap
+from cycler import cycler
+import era_brewer
+
+# Discrete
+color_scheme = era_brewer.era_brew('Lover1', n=5, brew_type="discrete")
+custom_cycler = cycler(color=color_scheme)
+
+# Continuous
+image_map = era_brewer.era_brew('Showgirl2',n=100,brew_type="continuous")
+custom_cmap = LinearSegmentedColormap.from_list("custom_gradient", image_map)
+```
+
+## Palettes
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(ggplot2)
+library(cowplot)
+library(tidyverse)
+library(urbnmapr)
+library(ggstream)
+library(knitr)
+library(magick)
+library(devtools)
+library(pkgdown)
+knitr::opts_chunk$set(echo = FALSE)
+devtools::load_all()   # or load_all(".")
+```
+
+```{r results='asis', fig.height=8, fig.retina = 10}
+source("dev/test_plots.R")
+for (palette in names(EraPalettes)) {
+  cat(paste0("\n\n### ", palette, "\n\n"))
+  colors = EraPalettes[palette][[1]][[1]]
+  order = EraPalettes[palette][[1]][[2]]
+  n = length(colors)
+  path = test.plots.era(palette)
+  cat(paste0("\n\n![Cover and sample plots for the album '", palette, "'](",path,")\n\n"))
+  cat(paste0('\nColors: `"', paste(colors, collapse = '", "'), '"`.\n\nIf you only need $n$ colors, we suggest you use:\n\n<details>\n'))
+  for (i in c(1:n)) {
+    ordered <- paste(colors[which(order %in% c(1:i)==TRUE)], collapse = '", "')
+    cat(paste0("\n", i, '. `"', ordered, '"`'))
+  }
+  cat("\n\n</details>")
+}
+```
