@@ -1,7 +1,7 @@
 Package: EraBrewer
 Type: Package
 Title: Color Palettes from the Album Covers of Each 'Taylor Swift' Era
-Version: 0.0.0.9000
+Version: 0.1.0
 URL: https://s-m.ac/EraBrewer/, https://github.com/mathias-sm/EraBrewer
 BugReports: https://github.com/mathias-sm/EraBrewer/issues
 Authors@R: c(
