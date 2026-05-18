@@ -1,3 +1,3 @@
-# EraBrewer 0.0.1
+# EraBrewer (development version)
 
 * Initial CRAN submission.
