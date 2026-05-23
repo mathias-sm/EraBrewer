@@ -1,14 +1,16 @@
 Package: EraBrewer
 Type: Package
-Title: Color Palettes from the Album Covers of Each 'Taylor Swift' Era
+Title: Color Palettes from the Album Covers of Each Taylor Swift Era
 Version: 0.1.0
 URL: https://s-m.ac/EraBrewer/, https://github.com/mathias-sm/EraBrewer
 BugReports: https://github.com/mathias-sm/EraBrewer/issues
 Authors@R: c(
-    person("Mathias", "Sablé-Meyer", email = "mat-git@s-m.ac", role = c("aut", "cre", "cph")),
-    person("Sandra", "Reinert", email = "sreinert694@gmail.com", role = "aut"))
+    person("Mathias", "Sablé-Meyer", email = "mat-git@s-m.ac",
+    role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0003-0844-0775")),
+    person("Sandra", "Reinert", email = "sreinert694@gmail.com",
+    role = "aut", comment = c(ORCID = "0000-0003-4302-7433")))
 Description: Provides discrete and continuous color palettes derived from
-    the album cover artwork of each 'Taylor Swift' era. Each palette
+    the album cover artwork of each Taylor Swift Era. Each palette
     ships with a curated order-of-use so that smaller discrete subsets
     remain harmonious, and supports continuous interpolation via
     'grDevices::colorRampPalette()' for arbitrary 'n'. Designed to plug
